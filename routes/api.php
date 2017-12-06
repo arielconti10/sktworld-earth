@@ -14,7 +14,7 @@ use Illuminate\Http\Request;
 */
 //
 
-Route::group(['middleware' => 'auth:api'], function () {
+Route::group(['middleware' => ['auth:api', 'cors']], function () {
     Route::post('logout', 'Auth\LoginController@logout');
 
     Route::get('/user', function (Request $request) {
@@ -25,7 +25,7 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::patch('settings/password', 'Settings\PasswordController@update');
 });
 
-Route::group(['middleware' => 'guest:api'], function () {
+Route::group(['middleware' => ['guest:api', 'cors']], function () {
     Route::post('login', 'Auth\LoginController@login');
     Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
     Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
