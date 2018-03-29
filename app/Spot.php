@@ -14,7 +14,7 @@ class Spot extends Model
         'country_id',
         'state_id',
         'lat',
-        'long',
+        'lng',
         'rate',
     ];
 }

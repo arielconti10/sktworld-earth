@@ -21,8 +21,13 @@ Route::group(['middleware' => ['auth:api', 'cors']], function () {
         return $request->user();
     });
 
+    //Spot List
     Route::get('/spots', 'SpotController@index');
     Route::get('/spots/{spot}', 'SpotController@show');
+
+    //Checkin
+    Route::post('/checkin', 'CheckinController@create');
+
 
     Route::patch('settings/profile', 'Settings\ProfileController@update');
     Route::patch('settings/password', 'Settings\PasswordController@update');

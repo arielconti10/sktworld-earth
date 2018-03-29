@@ -18,10 +18,10 @@ class CreateSpotsTable extends Migration
             $table->string('name');
             $table->string('description');
             $table->string('address');
-            $table->mediumInteger('lat');
-            $table->mediumInteger('long');
+            $table->decimal('lat', 10, 8);
+            $table->decimal('lng', 11, 8);
             $table->smallInteger('country_id');
-            $table->smallInteger('stat_id');
+            $table->smallInteger('state_id');
             $table->smallInteger('city_id');
             $table->tinyInteger('rate');
             $table->timestamps();

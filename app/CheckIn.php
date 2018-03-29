@@ -10,6 +10,8 @@ class CheckIn extends Model
         'user_id', 'spot_id', 'lat', 'long', 'comment'
     ];
 
+    protected $table = 'checkins';
+
     public function user()
     {
         return $this->belongsTo('App\User');

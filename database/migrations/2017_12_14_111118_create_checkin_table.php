@@ -13,13 +13,13 @@ class CreateCheckinTable extends Migration
      */
     public function up()
     {
-        Schema::create('check-ins', function (Blueprint $table) {
+        Schema::create('checkins', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('spot_id');
             $table->integer('lat');
             $table->integer('long');
-            $table->integer('comment');
+            $table->text('comment');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateCheckinTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('check-ins');
+        Schema::dropIfExists('checkins');
     }
 }

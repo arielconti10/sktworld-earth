@@ -19,7 +19,7 @@ class SpotsTableSeeder extends Seeder
             'country_id' => '1',
             'state_id' => '1',
             'lat' => '-23.5848',
-            'long' => '-46.6559',
+            'lng' => '-46.6559',
             'rate' => '5',
             ]);
         DB::table('spots')->insert([
@@ -30,7 +30,7 @@ class SpotsTableSeeder extends Seeder
             'country_id' => '1',
             'state_id' => '1',
             'lat' => '-23.5485',
-            'long' => '-46.6461',
+            'lng' => '-46.6461',
             'rate' => '5',
         ]);
     }
