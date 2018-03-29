@@ -21,12 +21,15 @@ Route::group(['middleware' => ['auth:api', 'cors']], function () {
         return $request->user();
     });
 
+    Route::get('/spots', 'SpotController@index');
+    Route::get('/spots/{spot}', 'SpotController@show');
+
     Route::patch('settings/profile', 'Settings\ProfileController@update');
     Route::patch('settings/password', 'Settings\PasswordController@update');
 });
 
 Route::group(['middleware' => ['guest:api', 'cors']], function () {
-    Route::post('login', 'Auth\LoginController@login');
+    Route::post('login', 'Auth\LoginController@login')->name('login');
     Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
     Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
     Route::post('register', 'Auth\RegisterController@register');
